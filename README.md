@@ -18,7 +18,11 @@ Format for the maze
 "S" is the start of the maze
 
 EXOOO
+
 OXOXO
+
 OXOXO 
+
 OXOXO
+
 OOOXS
