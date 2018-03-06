@@ -3,10 +3,10 @@
 # FB - 20121214
 import random
 from PIL import Image
-imgx = 500; imgy = 500
+mx = raw_input("X: "); my = raw_input("Y: ") # width and height of the maze
+imgx = mx * 10; imgy = mx * 10
 image = Image.new("RGB", (imgx, imgy))
 pixels = image.load()
-mx = 50; my = 50 # width and height of the maze
 maze = [[0 for x in range(mx)] for y in range(my)]
 dx = [0, 1, 0, -1]; dy = [-1, 0, 1, 0] # 4 directions to move in the maze
 color = [(0,0, 0), (255, 255, 255)] # RGB colors of the maze
