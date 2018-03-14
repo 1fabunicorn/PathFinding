@@ -3,7 +3,7 @@
 # FB - 20121214
 import random
 from PIL import Image
-mx = raw_input("X: "); my = raw_input("Y: ") # width and height of the maze
+mx = int(raw_input("X: ")); my = int(raw_input("Y: ")) # width and height of the maze
 imgx = mx * 10; imgy = mx * 10
 image = Image.new("RGB", (imgx, imgy))
 pixels = image.load()
