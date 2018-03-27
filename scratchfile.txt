@@ -1,0 +1,20 @@
+Possible maze start coordinates are as follows
+
+  10 20 30 40 50
+01              61
+11              62
+21              63
+31              64
+41              65
+  16 26 36 46 56
+
+
+
+  0 1 2 3 4 5 6
+0 n p p p p p n
+1 o           p
+2 p           p
+3 p           p
+4 p           p
+5 p           o
+6 n p p p p p n

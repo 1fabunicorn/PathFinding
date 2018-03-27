@@ -45,4 +45,6 @@ def read(file):
                 except RuntimeError:
                     print("maze file does not follow color standards")
                     return
-    return mazeArray
+        return mazeArray
+    else:
+        return "maze file not found"

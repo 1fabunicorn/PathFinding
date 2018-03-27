@@ -1,3 +1,3 @@
 # Main modules belong in this dir.
-
-__all__ = [MazeToArray]
+# TODO: Make this work!
+# __all__ = [MazeToArray]
