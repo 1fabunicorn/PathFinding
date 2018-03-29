@@ -10,8 +10,8 @@ import cv2
 
 
 colorCodes = {"[ 66  66 244]": "start",
-              "[255 255 255]": "wall",
-              "[0 0 0]": "path",
+              "[0 0 0]": "wall",
+              "[255 255 255]": "path",
               "[ 92 244  65]": "end"}
 
 
@@ -36,7 +36,6 @@ def read(file):
         rawMazeArray = cv2.imread(file)
         x, y = len(rawMazeArray), len(rawMazeArray[0])
         mazeArray = [list([]) for _ in range(x)]
-
         for X in range(x):
             for Y in range(y):
                 try:

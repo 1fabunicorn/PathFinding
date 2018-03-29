@@ -13,8 +13,6 @@ def _(array):  # Lookup
     except IndexError:
         return False
 
-print(maze)
-print(_([5,4]))
 
 def isPath(array):
     return _(array) is "path"
@@ -36,26 +34,33 @@ def move(move, currentX, currentY):
 
 
 print("start is " + str(start))
-# for x in range(20):
-#     xCurrent, yCurrent = start[0], start[1]
-#
-#     if _(move('right', xCurrent, yCurrent)) is 'path':
-#         xCurrent, yCurrent = move('right', xCurrent, yCurrent)[0], move('right', xCurrent, yCurrent)[1]
-#         print("x: " + str(xCurrent) + " y: " + str(yCurrent))
-#
-#     if _(move('left', xCurrent, yCurrent)) is 'path':
-#         xCurrent, yCurrent = move('left', xCurrent, yCurrent)[0], move('left', xCurrent, yCurrent)[1]
-#         print("x: " + str(xCurrent) + " y: " + str(yCurrent))
-#
-#     if _(move('up', xCurrent, yCurrent)) is 'path':
-#         xCurrent, yCurrent = move('up', xCurrent, yCurrent)[0], move('up', xCurrent, yCurrent)[1]
-#         print("x: " + str(xCurrent) + " y: " + str(yCurrent))
-#
-#     if _(move('down', xCurrent, yCurrent)) is 'path':
-#         xCurrent, yCurrent = move('up', xCurrent, yCurrent)[0], move('up', xCurrent, yCurrent)[1]
-#         print("x: " + str(xCurrent) + " y: " + str(yCurrent))
-#
-#     if maze[xCurrent][yCurrent] is 'end':
-#         print("end!!!")
 xCurrent, yCurrent = start[0], start[1]
-print(_(move('up', xCurrent, yCurrent)))
+
+for x in range(3):
+
+    if _(move('right', xCurrent, yCurrent)) is 'path':
+        xOldCurrent, yOldCurrent = xCurrent, yCurrent
+        xCurrent, yCurrent = move('right', xOldCurrent, yOldCurrent)[0], move('right', xOldCurrent, yOldCurrent)[1]
+        print("xOldCurrent: " + str(xOldCurrent) + " yOldCurrent: " + str(yOldCurrent))
+        print("xCurrent: " + str(xCurrent) + " yCurrent: " + str(yCurrent) + "\n")
+
+    elif _(move('left', xCurrent, yCurrent)) is 'path':
+        xOldCurrent, yOldCurrent = xCurrent, yCurrent
+        xCurrent, yCurrent = move('left', xOldCurrent, yOldCurrent)[0], move('left', xOldCurrent, yOldCurrent)[1]
+        print("xOldCurrent: " + str(xOldCurrent) + " yOldCurrent: " + str(yOldCurrent))
+        print("xCurrent: " + str(xCurrent) + " yCurrent: " + str(yCurrent) + "\n")
+
+    elif _(move('up', xCurrent, yCurrent)) is 'path':
+        xOldCurrent, yOldCurrent = xCurrent, yCurrent
+        xCurrent, yCurrent = move('up', xOldCurrent, yOldCurrent)[0], move('up', xOldCurrent, yOldCurrent)[1]
+        print("xOldCurrent: " + str(xOldCurrent) + " yOldCurrent: " + str(yOldCurrent))
+        print("xCurrent: " + str(xCurrent) + " yCurrent: " + str(yCurrent) + "\n")
+
+    elif _(move('down', xCurrent, yCurrent)) is 'path':
+        xOldCurrent, yOldCurrent = xCurrent, yCurrent
+        xCurrent, yCurrent = move('down', xOldCurrent, yOldCurrent)[0], move('down', xOldCurrent, yOldCurrent)[1]
+        print("xOldCurrent: " + str(xOldCurrent) + " yOldCurrent: " + str(yOldCurrent))
+        print("xCurrent: " + str(xCurrent) + " yCurrent: " + str(yCurrent) + "\n")
+
+    elif maze[xCurrent][yCurrent] is 'end':
+        print("end!!!")
