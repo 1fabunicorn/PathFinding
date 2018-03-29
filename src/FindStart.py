@@ -39,12 +39,9 @@ def findStart(mazeArray):
 
     for i in range(len(edges)):  # TODO: Make sense of this. they are backwards
         x, y = edges[i][0], edges[i][1]
-        if mazeArray[x][y] is 'start':
-            startEnd["end"] = [y, x]
         if mazeArray[x][y] is 'end':
+            startEnd["end"] = [y, x]
+        if mazeArray[x][y] is 'start':
             startEnd["start"] = [y, x]
 
     return startEnd
-
-
-# findStart([['path', 'path', 'path', 'path', 'path', 'path', 'path'], ['end', 'wall', 'path', 'wall', 'wall', 'wall', 'path'], ['path', 'wall', 'path', 'wall', 'path', 'wall', 'path'], ['path', 'wall', 'path', 'wall', 'path', 'wall', 'path'], ['path', 'wall', 'path', 'wall', 'path', 'wall', 'path'], ['path', 'wall', 'wall', 'wall', 'path', 'wall', 'start'], ['path', 'path', 'path', 'path', 'path', 'path', 'path']])

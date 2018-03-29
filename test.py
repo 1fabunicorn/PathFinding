@@ -62,6 +62,10 @@ def right(position, option=None):
         return False
 
 
+def isPath(mazeSpace):
+    return mazeSpace is 'path'
+
+
 current = [1, 2]
-print(right(current, 'maze'))
+print(isPath(right(current, 'maze')))
 print(right(current))

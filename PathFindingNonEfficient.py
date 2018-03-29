@@ -2,15 +2,32 @@ from src import MazeToArray as Mta
 from src import FindStart as Fs
 
 
-def isPath(mazeSpace):
-    return mazeSpace is 'path'
+def _(mazeArr):  # lookup
+    return maze[mazeArr[0]][mazeArr[1]]
 
 
-def isEnd(mazeSpace):
-    return mazeSpace is 'end'
+def isPath(mazeArr):
+    return _(mazeArr) is 'path'
+
+
+def isEnd(mazeArr):
+    return _(mazeArr) is 'end'
 
 
 # TODO: Make into one function?
+def right(position, option=None):
+    try:
+        if len(maze[0]) < position[0] + 1:
+            print("over")
+            return False
+        if option is 'maze':
+            return [position[0] + 1][position[1]]
+        else:
+            return [position[0] + 1, position[1]]
+
+    except IndexError:
+        return False
+
 
 def left(position, option=None):
     try:
@@ -48,20 +65,6 @@ def down(position, option=None):
         return False
 
 
-def right(position, option=None):
-    try:
-        if len(maze[0]) < position[0] + 1:
-            print("over")
-            return False
-        if option is 'maze':
-            return maze[position[0] + 1][position[1]]
-        else:
-            return [position[0] + 1, position[1]]
-
-    except IndexError:
-        return False
-
-
 def solveMaze(maze):
     traveledToo = []
     reps = 0
@@ -74,14 +77,15 @@ def solveMaze(maze):
 
     while True:
         # check right
-        if isPath(right(current, 'maze')) is 'path':
+        print(current)
+        if isPath(right(current, 'maze')):
             print("right")
             if right(current) not in traveledToo:
                 print("going right")
                 current = right(current)
                 traveledToo.append(current)
         # check left
-        if isPath(left(current, 'maze')) is 'path':
+        if isPath(left(current, 'maze')):
             print("left")
             if left(current) not in traveledToo:
                 print("going left")
@@ -95,7 +99,7 @@ def solveMaze(maze):
                 current = up(current)
                 traveledToo.append(current)
         # check down
-        if isPath(down(current, 'maze')) is 'path':
+        if isPath(down(current, 'maze')):
             print("down")
             if down(current) not in traveledToo:
                 print("going down")
@@ -106,9 +110,13 @@ def solveMaze(maze):
         reps += 1
         if reps > 20:
             return
-        print(current)
 
 
 maze = Mta.read("Mazes/maze0.tif")
 print(Fs.findStart(maze))
-print(solveMaze(maze))
+# print(maze[2][2])
+# print(isPath(right([0, 1])))
+# print(right([0, 1]))
+
+# print(Fs.findStart(maze))
+# print(solveMaze(maze))
