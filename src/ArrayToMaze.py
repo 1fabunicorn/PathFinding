@@ -5,5 +5,5 @@ colorCodes = {"[ 66  66 244]": "start",
 
 
 def arrayToMaze(mazeArr):
-    # TODO: Create "solved" maze function
+    # TODO: Create "solved" maze function using CV2
     pass
