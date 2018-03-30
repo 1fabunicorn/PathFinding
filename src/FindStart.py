@@ -37,11 +37,11 @@ def findStart(mazeArray):
             if cords not in nullStartOrEnds:
                 edges.append(cords)
 
-    for i in range(len(edges)):  # TODO: Make sense of this. they are backwards
+    for i in range(len(edges)):
         x, y = edges[i][0], edges[i][1]
         if mazeArray[x][y] is 'end':
-            startEnd["end"] = [y, x]
+            startEnd["end"] = [x, y]
         if mazeArray[x][y] is 'start':
-            startEnd["start"] = [y, x]
+            startEnd["start"] = [x, y]
 
     return startEnd

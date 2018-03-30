@@ -4,7 +4,6 @@ MazeToArray.py
 Reads maze file into array to work with
 
 from src import MazeToArray
-maze = read("../Mazes/maze0.tif")
 """
 import cv2
 
